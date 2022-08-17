@@ -14,14 +14,14 @@ module.exports ={
 
         if (error) {
             console.log(error);
-            res.status(400).send('add failed');
+            res.status(400).send('Error while fetching customers');
             return
         }
 
         const fieldsMap = new Map([
             ['first_name', 'customers.first_name'],
             ['last_name', 'customers.last_name'],
-            ['email', 'countries.email'],
+            ['email', 'customers.email'],
         ]);
 
         const sql= "SELECT * FROM customers"
