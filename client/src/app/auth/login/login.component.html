@@ -1,0 +1,38 @@
+<a
+            class="nav-link"
+            routerLink="/customers-component"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Customers</a>
+
+
+<div class="center">
+<div class="container my-auto">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div> <h1>Sign in:</h1></div>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label for="" class="form-label">Email</label>
+        <input #emailField formControlName="email" type="email" class="form-control" placeholder="Enter your email">
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label for="" class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" placeholder="Enter your password">
+    </div>
+  
+
+  
+    <!-- Submit button -->
+    <div class="col d-flex justify-content-center">
+    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-block mb-4 ">Sign in</button>
+  </div>
+
+    <div class="text-center">
+      <p>Not a member? <a routerLink="/signup-component" routerLinkActive="active" ariaCurrentWhenActive="page"
+        class="">Register</a></p>
+    </div>
+  </form>
+</div>
+</div>

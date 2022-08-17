@@ -1,0 +1,67 @@
+ <!--  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+   
+  </mat-toolbar> -->
+  <app-header></app-header>
+  <div class="example-spacer">
+    <button mat-raised-button (click)="openDialog()">Add Customer</button>
+  </div>
+
+<div class="container">
+<div>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+
+          <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.first_name}} </td>
+          </ng-container>
+      
+
+          <ng-container matColumnDef="last_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.last_name}} </td>
+          </ng-container>
+      
+
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+            <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+          </ng-container>
+      
+  
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Perform Actions </th>
+            <td mat-cell *matCellDef="let row"> 
+                <button mat-icon-button (click)="editCustomerRow(row)"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button color="warn" (click)="promptConfirmation(row.id)"><mat-icon>delete</mat-icon></button>    
+
+            </td>
+          </ng-container>
+      
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[20, 50, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+
+
+</div>
+</div>
+

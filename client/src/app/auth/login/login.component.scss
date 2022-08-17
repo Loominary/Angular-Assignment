@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 95vh;
+    width: 95vw;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 110px;
+}
+
+
+
+.container{
+    
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid black;
+    box-shadow: 5px 5px 10px #9fa5d8ad;
+    background-color: rgba(220, 228, 245, 0.719);
+    
+
+}
+
+form{
+    padding: 5px;
+}
